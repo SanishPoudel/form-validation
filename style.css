@@ -32,3 +32,18 @@ button:hover {
 button:active {
     translate: 0 5%;
 }
+
+input[type="password"]:invalid {
+    border-color: red;
+}
+  
+input[type="password"]:placeholder-shown:invalid{
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+input:focus{
+    outline: none;
+    border-color: blue;
+    box-shadow: 2px 2px gainsboro;
+}
