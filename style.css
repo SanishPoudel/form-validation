@@ -1,0 +1,12 @@
+fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    margin: 1%;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
