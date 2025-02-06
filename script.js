@@ -15,4 +15,10 @@ function checkPassword(event) {
 checkPassword(pass);
 checkPassword(conf);
 
-
+submit.addEventListener("click", (event)=> {
+    if (!(pass.value === conf.value)) {
+        conf.setCustomValidity("Passwords don't match")
+    } else {
+        conf.setCustomValidity("");
+    }
+});
