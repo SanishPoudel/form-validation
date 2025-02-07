@@ -3,6 +3,7 @@ const conf = document.querySelector("#confirm");
 const submit = document.querySelector("button");
 const first = document.querySelector("#firstName");
 const last = document.querySelector("#lastName");
+const phone = document.querySelector("#phone");
 
 function checkPassword(event) {
     event.addEventListener("input", ()=> {
@@ -35,6 +36,12 @@ submit.addEventListener("click", (event)=> {
         last.setCustomValidity("Please enter your last name.")
     } else {
         last.setCustomValidity("");
+    }
+
+    if (phone.value === "") {
+        phone.setCustomValidity("Please enter your phone number.")
+    } else {
+        phone.setCustomValidity("");
     }
 
     if (!(pass.value === conf.value)) {
