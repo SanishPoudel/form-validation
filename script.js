@@ -16,6 +16,13 @@ checkPassword(pass);
 checkPassword(conf);
 
 submit.addEventListener("click", (event)=> {
+
+    if(pass.value === "") {
+        pass.setCustomValidity("Please enter your password.")
+    } else {
+        pass.setCustomValidity("");
+    }
+
     if (!(pass.value === conf.value)) {
         conf.setCustomValidity("Passwords don't match")
     } else {
