@@ -1,6 +1,7 @@
 const pass = document.querySelector("#password");
 const conf = document.querySelector("#confirm");
 const submit = document.querySelector("button");
+const first = document.querySelector("#firstName");
 
 function checkPassword(event) {
     event.addEventListener("input", ()=> {
@@ -21,6 +22,12 @@ submit.addEventListener("click", (event)=> {
         pass.setCustomValidity("Please enter your password.")
     } else {
         pass.setCustomValidity("");
+    }
+
+    if (first.value === "") {
+        first.setCustomValidity("Please enter your first name.")
+    } else {
+        first.setCustomValidity("");
     }
 
     if (!(pass.value === conf.value)) {
