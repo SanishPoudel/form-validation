@@ -57,3 +57,13 @@ submit.addEventListener("click", (event)=> {
         conf.setCustomValidity("");
     }
 });
+
+function emptyCondition(inputField) {
+    inputField.addEventListener("input", ()=> {
+        if (!inputField.validity.valueMissing) {
+            inputField.setCustomValidity("");
+        }
+    })
+}
+
+emptyCondition(first);
