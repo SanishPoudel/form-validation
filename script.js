@@ -67,3 +67,6 @@ function emptyCondition(inputField) {
 }
 
 emptyCondition(first);
+emptyCondition(last);
+emptyCondition(phone);
+emptyCondition(email);
