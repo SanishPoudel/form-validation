@@ -29,33 +29,40 @@ submit.addEventListener("click", (event)=> {
 
     if (first.value === "") {
         first.setCustomValidity("Please enter your first name.")
+        return;
     } else {
         first.setCustomValidity("");
     }
 
     if (last.value === "") {
         last.setCustomValidity("Please enter your last name.")
+        return;
     } else {
         last.setCustomValidity("");
     }
 
     if (phone.value === "") {
         phone.setCustomValidity("Please enter your phone number.")
+        return;
     } else {
         phone.setCustomValidity("");
     }
 
     if (email.value === "") {
         email.setCustomValidity("Please enter your email address.");
+        return;
     } else {
         email.setCustomValidity("");
     }
 
     if (!(pass.value === conf.value)) {
         conf.setCustomValidity("Passwords don't match")
+        return;
     } else {
         conf.setCustomValidity("");
     }
+
+    alert("Hi five!!!");
 });
 
 function emptyCondition(inputField) {
