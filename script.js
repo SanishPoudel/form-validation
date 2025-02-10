@@ -5,9 +5,12 @@ const first = document.querySelector("#firstName");
 const last = document.querySelector("#lastName");
 const phone = document.querySelector("#phone");
 const email = document.querySelector("#email");
+const form = document.querySelector("form");
 
 function checkPassword(event) {
-    event.addEventListener("input", ()=> {
+    event.addEventListener("input", (thisEvent)=> {
+        thisEvent.preventDefault();
+        form.reportValidity();
         if (event.validity.tooShort) {
             event.setCustomValidity("Please enter a password that is atleast 8 characters long.")
         } else {
@@ -20,12 +23,9 @@ checkPassword(pass);
 checkPassword(conf);
 
 submit.addEventListener("click", (event)=> {
-
-    if(pass.value === "") {
-        pass.setCustomValidity("Please enter your password.")
-    } else {
-        pass.setCustomValidity("");
-    }
+    
+    event.preventDefault();
+    form.reportValidity();
 
     if (first.value === "") {
         first.setCustomValidity("Please enter your first name.")
@@ -55,14 +55,23 @@ submit.addEventListener("click", (event)=> {
         email.setCustomValidity("");
     }
 
+    if(pass.value === "") {
+        pass.setCustomValidity("Please enter your password.")
+        return;
+    } else {
+        pass.setCustomValidity("");
+    }
+
     if (!(pass.value === conf.value)) {
         conf.setCustomValidity("Passwords don't match")
+        form.reportValidity();
         return;
     } else {
         conf.setCustomValidity("");
     }
 
     alert("Hi five!!!");
+
 });
 
 function emptyCondition(inputField) {
