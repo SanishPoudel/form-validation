@@ -86,3 +86,16 @@ emptyCondition(first);
 emptyCondition(last);
 emptyCondition(phone);
 emptyCondition(email);
+
+function validate(field) {
+    field.addEventListener("blur", ()=> {
+        field.reportValidity();
+    })
+}
+
+validate(first);
+validate(last);
+validate(phone);
+validate(email);
+validate(pass);
+validate(conf);
